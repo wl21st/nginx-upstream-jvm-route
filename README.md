@@ -1,10 +1,10 @@
-=nginx_upstream_jvm_route=
+## nginx_upstream_jvm_route
 -------
 
 This module achieves session stickiness with the session cookie. If the session is not in the cookie
 or URL, the module will be a normal Round-Robin upstream module.
 
-=INSTALLATION=
+## INSTALLATION
     
     cd nginx-0.7.59 # or whatever
     patch -p0 < /path/to/this/directory/jvm_route.patch
@@ -13,7 +13,7 @@ compile nginx with the following addition option:
 
   --add-module=/path/to/this/directory
 
-=DIRECTIVES=
+## DIRECTIVES
 
     ==jvm_route==
 
