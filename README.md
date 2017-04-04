@@ -1,5 +1,4 @@
 ## nginx_upstream_jvm_route
--------
 
 This module achieves session stickiness with the session cookie. If the session is not in the cookie
 or URL, the module will be a normal Round-Robin upstream module.
@@ -15,13 +14,12 @@ compile nginx with the following addition option:
 
 ## DIRECTIVES
 
-    ==jvm_route==
+    ##jvm_route
 
     syntax: jvm_route $cookie_SESSION_COOKIE[|session_url] [reverse]
     default: none
     context: upstream
-    description: 
-    '$cookie_SESSION_COOKIE' specifies the session cookie name(0.7.24+). 'session_url' specifies a
+    description: '$cookie_SESSION_COOKIE' specifies the session cookie name(0.7.24+). 'session_url' specifies a
     different session name in the URL when the client does not accept a cookie. The session name is
     case-insensitive. In this module, if it does not find the session_url, it will use the session
     cookie name instead. So if the session name in cookie is the name with its in URL, you don't
@@ -37,7 +35,7 @@ compile nginx with the following addition option:
     the session sticky, you can set 'proxy_next_upstream off'.
 
 
-    ==jvm_route_status==
+    ##jvm_route_status
 
     syntax: jvm_route_status upstream_name
     default: none
@@ -83,7 +81,7 @@ compile nginx with the following addition option:
     total_fails is the count of failure requests which had proxied to the this backend server.
     fail_acc_time stands for the last failure access time.
 
-    ==server==
+    ##server
 
     Main syntax is the same as the official directive. 
     This module add these parameters:
@@ -96,7 +94,7 @@ compile nginx with the following addition option:
      
     NOTE: This module does not support the parameter of 'backup' yet.
  
-=EXAMPLE=
+##EXAMPLE
 
 1.For resin with nginx
 
